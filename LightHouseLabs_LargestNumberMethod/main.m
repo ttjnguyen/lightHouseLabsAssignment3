@@ -8,10 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
-    }
-    return 0;
+@implementation NSArray (LargestNumber)
+
+int findLargestNumber (NSArray *numbers) {
+    int max = [[numbers valueForKeyPath:@"max.intValue"]intValue];
+    return max;
 }
+
+
+int main(int argc, const char * argv[]) {
+
+       
+        
+        NSArray *numbers = @[@3,@7,@6,@8];
+        NSArray *numbers2 = @[@44,@5,@6];
+        
+        NSLog(@"Max of 1st array: %d", findLargestNumber(numbers));
+        NSLog(@"Max of 2nd array: %d", findLargestNumber(numbers2));
+         
+         
+        return 0;
+    }
+    @end
+
